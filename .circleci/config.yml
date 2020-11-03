@@ -1,0 +1,14 @@
+jobs:
+  foo:
+    docker:
+      - image: hashicorp.jfrog.io/docker/ubuntu:bionic
+    parallelism: 4
+    steps:
+      - checkout
+      - run: echo Hello, world. Yay
+
+workflows:
+  version: 2
+  circle-test:
+    jobs:
+      - foo
